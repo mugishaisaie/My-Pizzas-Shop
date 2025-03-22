@@ -1,26 +1,30 @@
-import React from 'react'
-import Header from './Header'
-import { Link, Outlet, useNavigation } from 'react-router-dom'
-import CartOverview from '../features/cart/CartOverview'
-import Loader from './Loader';
+import React from "react";
+import Header from "./Header";
+import { Link, Outlet, useNavigation } from "react-router-dom";
+import CartOverview from "../features/cart/CartOverview";
+import Loader from "./Loader";
 
 function PageLayout() {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
 
-    const isLoading = navigation.state === 'loading';
-    
+  const isLoading = navigation.state === "loading";
+
   return (
-    <div className='layout'>
-        <Header />
-        <h2 className='text-fuchsia-900 font-serif border-lime-500'>Pizza App</h2>
-        <main>
-            {isLoading && <Loader />}
-            <Outlet />
-        </main>
+    <div className="grid h-screen grid-rows-[auto_1fr_auto] ">
+        {isLoading && <Loader />}
+      
+      <Header />
+     
+     <div className="overflow-scroll">
 
-        <CartOverview />
+      <main className="max-w-3xl mx-auto">
+        <Outlet />
+      </main>
+     </div>
+
+      <CartOverview />
     </div>
-  )
+  );
 }
 
-export default PageLayout
+export default PageLayout;
