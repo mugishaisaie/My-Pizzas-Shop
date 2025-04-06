@@ -6,8 +6,8 @@ import UserName from "../features/user/UserName";
 function Header() {
   return (
     <header className="flex items-center justify-between text-xl bg-yellow-500 px-8 py-3 border-b border-stone-900 font-sans">
-      <Link to="/" className="uppercase tracking-widest font-sans">
-        🍕My Pizzas
+      <Link to="/" className="uppercase tracking-wide from-stone-950 font-sans">
+        🍕MY PIZZAS SHOP
       </Link>
       <SearchOrder />
       <UserName />
